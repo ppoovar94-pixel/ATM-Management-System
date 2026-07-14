@@ -1,89 +1,65 @@
-#Mini Project on ATM
-'''1) check_bal
-2) deposit
-3)withdraw
-4)set_pin
-variables:  bal=0
-            og_pin=None
-'''
+🏧 ATM Mini Project
+ 📖 Project Description
+This is a simple ATM Management System developed using Python. It is a console-based application that simulates basic ATM operations such as setting a PIN, checking balance, depositing money, and withdrawing money.
 
-#create set_pin function
+✨ Features
+- 🔐 Set a 4-digit PIN
+- 💰 Check Account Balance
+- 💵 Deposit Money
+- 🏧 Withdraw Money
+- ✅ PIN Verification for Secure Access
+- 🚪 Exit Option
 
-bal=0
-og_pin=None
+ 🛠️ Technologies Used
+- Python 3.14
+- IDLE / VS Code
 
-def set_pin():
-    global og_pin
-    while True:
-        print('-'*60)
-        if og_pin==None:
-            pin1=int(input('Enter a 4 Digit Pin: '))
-            pin2=int(input('Confirm your Pin: '))
-            if pin1==pin2:
-                print('Pin set successful')
-                og_pin=pin1
-                break
-            else:
-                print("Incorrect Pin or Pin doesn't match")
-        else:
-            print('Pin is already set')
+📂 Project Structure
 
-def check_bal():
-    pin=int(input('Enter a 4 Digit Pin: '))
-    if pin==og_pin:
-        print('Available Balance in your A/C is: ',bal,'Rs.')
-    else:
-        print('Incorrect Pin or pin not set')
+ATM.py
+README.md
 
-def deposit():
-    global bal
-    pin=int(input('Enter a 4 Digit Pin: '))
-    if pin==og_pin:
-        amt=int(input('Enter your amount to Deposit: '))
-        bal+=amt
-        print(f'Amount of {amt} Rs. Deposited Successfully')
-    else:
-        print('Incorrect Pin or pin not set')
 
-def withdraw():
-    global bal
-    pin=int(input('Enter a 4 Digit Pin: '))
-    if pin==og_pin:
-        amt=int(input('Enter your amount to Withdraw: '))
-        if amt<=bal:
-            bal-=amt
-            print(f'Amount of {amt} Rs. Withdraw Successful')
-        else:
-            print('Insufficient Funds')
-    else:
-        print('Incorrect pin or pin not set')
-def services():
-    while True:
-        print('-'*60)
-        print('-----WELCOME TO THIS ATM------')
-        print('Enter 1: Deposit')
-        print('Enter 2: Withdraw')
-        print('Enter 3: Check Balance')
-        print('Enter 4: Set Pin')
-        print('Enter 5: Exit')
-        choice=int(input('Enter your choice: '))
-        if choice==1:
-            deposit()
-        elif choice==2:
-            withdraw()
-        elif choice==3:
-            check_bal()
-        elif choice==4:
-            set_pin()
-        elif choice==5:
-            print('Thank you for using our ATM services....')
-            break
-        a=input('Do you want to continue (press 1.yes \n  0.no)? :  ')
-        if a=='1':
-            continue
-        else:
-            print('Thank you for using our ATM services....')
-            break
+▶️ How to Run
+1. Install Python 3.
+2. Open the project folder.
+3. Run:
 
-services()
+bash
+python ATM.py
+
+
+ 📋 Menu
+
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Set PIN
+5. Exit
+
+
+ 📸 Sample Output
+
+------WELCOME TO THIS ATM------
+
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Set PIN
+5. Exit
+
+Enter your choice:
+
+
+ 🚀 Future Improvements
+- Change PIN
+- Mini Statement
+- Transaction History
+- Multiple User Accounts
+- Data Storage using File or Database
+
+👨‍💻 Author
+*Poovarasan K*
+
+B.Sc. Computer Science (Final Year)
     
